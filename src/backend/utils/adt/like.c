@@ -210,11 +210,11 @@ Generic_Text_IC_like(text *str, text *pat, Oid collation)
 
 	if (pg_database_encoding_max_length() > 1 || (locale && locale->provider == COLLPROVIDER_ICU))
 	{
-		pat = DatumGetTextPP(DirectFunctionCall1Coll(lower, collation,
+		pat = DatumGetTextPP(DirectFunctionCall1Coll(lowerdd, collation,
 													 PointerGetDatum(pat)));
 		p = VARDATA_ANY(pat);
 		plen = VARSIZE_ANY_EXHDR(pat);
-		str = DatumGetTextPP(DirectFunctionCall1Coll(lower, collation,
+		str = DatumGetTextPP(DirectFunctionCall1Coll(lowerdd, collation,
 													 PointerGetDatum(str)));
 		s = VARDATA_ANY(str);
 		slen = VARSIZE_ANY_EXHDR(str);

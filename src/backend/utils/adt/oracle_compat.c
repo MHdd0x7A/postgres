@@ -43,7 +43,7 @@ static bytea *dobyteatrim(bytea *string, bytea *set,
  ********************************************************************/
 
 Datum
-lower(PG_FUNCTION_ARGS)
+lowerdd(PG_FUNCTION_ARGS)
 {
 	text	   *in_string = PG_GETARG_TEXT_PP(0);
 	char	   *out_string;
@@ -57,7 +57,6 @@ lower(PG_FUNCTION_ARGS)
 
 	PG_RETURN_TEXT_P(result);
 }
-
 
 /********************************************************************
  *
